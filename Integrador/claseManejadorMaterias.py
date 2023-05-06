@@ -56,13 +56,15 @@ class ManejadorMaterias:
 
     def promocionales(self, alumnos, materia):
         ban = 0
+        print(f'{"DNI":15}{"Apellido y Nombre":25}{"Fecha":15}{"Nota":10}{"Año":10}')
+
         for m in self.__materias:
             if m.getNombre() == materia:
                 if m.getAprobacion() == "P":
                     dni = m.getDNI()
                     alumno = alumnos.buscarAlumno(dni)
                     ban = 1
-                    print(f"{dni}, {alumno.getApellido()} {alumno.getNombre()}, {m.getFecha()}, {m.getNota()}, {alumno.getAño()}")
+                    print(f"{dni:<15}{alumno.getAyN():<25}{m.getFecha():<15}{m.getNota():<10}{alumno.getAño():<10}")
         
         if ban == 0:
             print("No hubo alumnos promocionales en esta materia")
