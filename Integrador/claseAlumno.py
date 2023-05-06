@@ -30,6 +30,9 @@ class Alumno:
     
     def getAño (self):
         return self.__año
+    
+    def getAyN(self):
+        return f"{self.__apellido}, {self.__nombre}"
       
     def __lt__ (self, otro):
         a = self.__año + self.__apellido + self.__nombre
